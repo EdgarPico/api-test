@@ -18,7 +18,7 @@ const loadInitialTemplate = () => {
     body.innerHTML = template
 }
 const getUsers = async () =>{
-    const response = await fetch('../users')
+    const response = await fetch('/users')
     const users = await response.json()
     const template = user => `
         <li>
@@ -47,7 +47,7 @@ const addFormListener = () =>{
         //console.log(formData.get('name')); 
         const data = Object.fromEntries(formData.entries())
         //console.log(data);
-        await fetch('../users',{
+        await fetch('/users',{
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
