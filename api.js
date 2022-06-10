@@ -19,7 +19,7 @@ app.delete('/users/:id',user.destroy)
 app.use(express.static('app'))
 
 app.get('*', (req,res) => {
-    //console.log(__dirname)
+    console.log(__dirname)
     res.sendFile(__dirname + '/index.html')
 })
 app.get('*',(req,res) =>{
